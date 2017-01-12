@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Repeat Bocks Prototype</title>
+
+    <script>
+
+        var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        //Feature Set 1
+
+        console.log("Ascending Order:\n\n");
+        for (var i = 0; i < numbers.length; i++) {
+            console.log(numbers[i]);
+        }
+
+        console.log("\n\n\nDescending Order:\n\n");
+        for (i = 9; i >= 0; i--) {
+            console.log(numbers[i]);
+        }
+
+        console.log("\n\n\nOdd Numbers:\n\n");
+        for (var i = 0; i < numbers.length; i++) {
+            if ((numbers[i] % 2) != 0)
+                console.log(numbers[i]);
+        }
+
+        var mixedArray = [4, 56, 11, 13, 97, 22, 7, 36, 19, 5, 8, 10];
+
+        console.log("\n\n\nmixedArray:\n\n");
+        for (var i = 0; i < mixedArray.length; i++) {
+            if ((mixedArray[i] % 2) != 0)
+                console.log(mixedArray[i]);
+        }
+
+        //Feature Set 2
+
+        console.log("\n\nFeature Set 2: For in loop\n\n");
+
+        var classRoom = {desk1: 'Stu', desk2: 'Peggy', desk3: 'LoneStar', desk4: 'George', desk5: 'Sheldon'}
+        var i = 0;
+        var student;
+
+        for (student in classRoom) {
+            console.log(classRoom[student]+" is at "+Object.getOwnPropertyNames(classRoom).sort()[i]);
+            i++;
+        }
+
+        //Feature Set 3
+
+        console.log("\n\nFeature Set 3: While loop\n\n");
+
+        var studentArray =
+            [
+                {name: "Bob", grade: 87},
+                {name: "Fred", grade: 82},
+                {name: "George", grade: 93},
+                {name: "Robert", grade: 85}
+            ];
+
+        function findStudent(student_name) {
+
+            var i = 0;
+            var found = false;
+
+            while (i < studentArray.length && !found) {
+                if (studentArray[i].name == student_name) {
+                    found = true;
+                }
+                else {
+                    i++;
+                }
+            }
+            if (found)
+                return "Found " + studentArray[i].name + " their grade is: " + studentArray[i].grade;
+            else
+                return "Student "+student_name+" not found."
+        }
+
+        for (i=0; i < studentArray.length; i++) {
+            console.log(findStudent(studentArray[i].name));
+
+        }
+        console.log(findStudent("Hank"));
+
+    </script>
+
+</head>
+<body>
