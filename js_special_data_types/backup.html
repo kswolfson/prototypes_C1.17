@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Primitive Data Types Prototype</title>
+
+    <script>
+
+        //Feature Set 1
+
+        var x = null;
+        var y;
+        var z = "any string";
+
+        //Feature Set 2
+
+        var output1;
+        var output2;
+        var output3;
+
+        var output1 = x == y;
+        var output2 = x == z;
+        var output3 = y == z;
+
+        //output 1 disturbs me since y is not null, as distinct from x == y
+        //It's going to take getting used to
+
+        console.log("output1: ", output1);
+
+        console.log("output2: ", output2)
+        console.log("output3: ", output3)
+
+        //Feature Set 3
+
+        var output4 = typeof(x);
+        var output5 = typeof(y);
+        var output6 = typeof(z);
+
+        //I also typed the following in the console per prototype instructions
+
+        console.log("typeof output4 is "+output4);
+        console.log("typeof output5 is "+output5);
+        console.log("typeof output6 is "+output6);
+
+    </script>
+
+</head>
+<body>
