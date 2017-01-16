@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS Reference Data Types Prototype</title>
+
+<script>
+
+    var student_array = ["Ken", "Alycia", "David", "Tally", "Dashiell"];
+
+    console.log("3rd student: "+student_array[2]);
+
+    student_array.push("Quinn"); //add Quinn to student_array
+    student_array.push("Adrian"); //add Adrian to student_array
+
+    console.log("student array contents: "+student_array); //full student_array
+    console.log("array length after adding 2 students: "+student_array.length);
+
+    var student_object = {
+
+        firstName:"Ken",
+        lastName: "Wolfson",
+        age: 20,
+        school: "BHS",
+        questionList: [],
+        hasQuestion: false
+    };
+
+    function greeting () {
+        return "Hello, my name is " + student_object.firstName;
+    };
+
+    function aboutMe () {
+        return "My full name is " + student_object.firstName+" "+student_object.lastName+", " +
+            "I am "+student_object.age+" years old and I am a student at "+student_object.school;
+    };
+
+    function askQuestion (question) {
+        student_object.questionList.push(question);
+        student_object.hasQuestion = true;
+        return "A question has been added to your list";
+    };
+
+    function answerQuestion () {
+        if (student_object.hasQuestion) {
+            student_object.hasQuestion = false;
+            return student_object.questionList[student_object.questionList.length - 1];
+        }
+        else {
+            return "You have no pending questions";
+        }
+    };
+
+    console.log("greeting(): "+greeting());
+    console.log("aboutMe(): "+aboutMe());
+    console.log("answerQuestion(): "+answerQuestion());
+    console.log("askQuestion (): "+askQuestion("Are puppies cute?"));
+    console.log("askQuestion (): "+askQuestion("Are there kitten videos on FaceBook?"));
+    console.log("askQuestion (): "+askQuestion("How can I tell if I'm real?"));
+
+</script>
+
+</head>
+<body>
+
