@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="UTF-8">
+<title>js oop</title>
+
+<head>
+<script>
+
+    function coin_stack(startingAmount) {
+        this.value = startingAmount;
+        this.add_coins = function(numCoins) {
+            this.value = this.value + numCoins;
+            console.log('squids');
+        }
+    }
+    var my_coin_stack = new coin_stack(50);
+    console.log('my_coin_stack contains ', my_coin_stack.value, ' coins');
+
+    my_coin_stack.add_coins(25);
+    console.log('my_coin_stack now contains ', my_coin_stack.value, ' coins');
+
+</script>
+</head>
+
+<body>
+<h1>Javascript OOP Prototype</h1>
+</body>
+</html>
+
