@@ -24,19 +24,20 @@
 
     var num_transfer_coins = 15;
 
-    coin_stack.prototype = function transfer_coins(my_coin_stack_source, num_transfer_coins) {
+
+    coin_stack.prototype.transfer_coins = function (source, num_transfer_coins) {
         console.log('inside transfer');
-        var transfer_balance = my_coin_stack_source.value - num_transfer_coins;
+        var transfer_balance = source.value - num_transfer_coins;
         if (transfer_balance > 0) {
             my_coin_stack_target.value = my_coin_stack_target.value + transfer_balance;
-            my_coin_stack_source.value = my_coin_stack_source.value - transfer_balance;
+            source.value = source.value - transfer_balance;
         }
         else {
             console.log("Source - num_transfer_coins = "+num_transfer_coins);
         }
     }
 
-    coin_stack.transfer_coins(my_coin_stack_source, num_transfer_coins);
+    var transfer_instance = new transfer_coins(my_coin_stack_source, num_transfer_coins);
 
     console.log('my_coin_stack_source (after transfer):  '+my_coin_stack_source.value);
     console.log('my_coin_stack_target (after transfer):  '+my_coin_stack_target.value);
